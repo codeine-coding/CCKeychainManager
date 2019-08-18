@@ -10,7 +10,7 @@ jobs:
   include:
     - stage: OSX test
     - os: osx
-    - osx_image: xcode10.0
+    - osx_image: xcode10
     - language: swift
     - sudo: required
     - script:
