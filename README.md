@@ -1,3 +1,3 @@
 # CCKeychainManager
 
-A description of this package.
+A very simple mananger for storing access and refresh tokens to the keychain.
