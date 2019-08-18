@@ -19,4 +19,4 @@ jobs:
   - stage: Set tag
     script:
     - git tag $PACKAGE_VERSION
-    - git push --quite origin master --tags
+    - git push --quiet origin master --tags
