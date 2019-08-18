@@ -6,6 +6,7 @@ branches:
 env:
   global:
   - PACKAGE_VERSION=0.0.1
+  - GH_TOKEN
 jobs:
   include:
   - stage: OSX test
@@ -19,4 +20,6 @@ jobs:
   - stage: Set tag
     script:
     - git tag $PACKAGE_VERSION
+    - git config --global user.email "learncodeinecoding@gmail.com"
+    - git config --global user.name "Allen Whearry"
     - git push --quiet origin master --tags
