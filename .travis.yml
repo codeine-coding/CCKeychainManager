@@ -1,0 +1,22 @@
+if: tag IS blank
+branches:
+  only:
+    - master
+# set environment variables for the build job
+env:
+  global:
+    - PACKAGE_VERSION=0.0.1
+jobs:
+  include:
+    - stage: OSX test
+    - os: osx
+    - osx_image: xcode10.0
+    - language: swift
+    - sudo: required
+    - script:
+      - swift package update
+      - swift test
+    stage: Set tag
+      - script:
+        - git tag $PACKAGE_VERSION
+        - git push --quite origin master --tag
