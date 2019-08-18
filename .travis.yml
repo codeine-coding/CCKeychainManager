@@ -22,4 +22,4 @@ jobs:
     - git tag $PACKAGE_VERSION
     - git config --global user.email "learncodeinecoding@gmail.com"
     - git config --global user.name "Allen Whearry"
-    - git push --quiet origin master --tags
+    - git push --quiet https://$GH_TOKEN@github.com/codeine-coding/CCKeychainManager --tag
