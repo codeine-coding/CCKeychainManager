@@ -73,6 +73,6 @@ public struct KeychainItem: Equatable {
 
 extension KeychainItem {
     public static func == (lhs: KeychainItem, rhs: KeychainItem) -> Bool {
-        return lhs.config.keyLabel == rhs.config.keyLabel
+        return lhs.config == rhs.config
     }
 }

@@ -21,3 +21,12 @@ open class BaseItemConfiguration: BaseItem {
         fatalError(ErrorMessage.BaseItemConfigCreateQuery)
     }
 }
+
+extension BaseItemConfiguration: Equatable {
+    public static func == (lhs: BaseItemConfiguration, rhs: BaseItemConfiguration) -> Bool {
+        return lhs.keyLabel == rhs.keyLabel
+            && lhs.server == rhs.server
+    }
+    
+    
+}
