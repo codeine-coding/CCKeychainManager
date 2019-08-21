@@ -17,7 +17,7 @@ jobs:
     script:
     - swift package update
     - swift test
-    - xcodebuild -scheme CCKeychainManager -workspace package.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=11.1' build test
+    - xcodebuild -scheme CCKeychainManager -workspace .spm/xcode/package.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=11.1' build test
     after_success:
       - bash <(curl -s https://codecov.io/bash)
   - stage: Set tag
