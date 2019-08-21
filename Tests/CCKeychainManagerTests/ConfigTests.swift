@@ -35,7 +35,9 @@ final class ConfigTests: XCTestCase {
         XCTAssertTrue(accessConfig != refreshConfig)
     }
     
-//    static var allTests = [
-//        ("testAccessConfig_IsNotEqualTo_RefeshConfig", testAccessConfig_IsNotEqualTo_RefeshConfig),
-//    ]
+    func testCreateQuery_ReturnsDictionaryWithStringKey_ValueAny() {
+        let dict = accessConfig.createQuery()
+        XCTAssert(dict is [String: Any])
+    }
+    
 }
