@@ -5,7 +5,7 @@ branches:
 # set environment variables for the build job
 env:
   global:
-  - PACKAGE_VERSION=0.0.7
+  - PACKAGE_VERSION=0.0.8
   - GH_TOKEN
 jobs:
   include:
@@ -17,9 +17,6 @@ jobs:
     script:
     - swift package update
     - swift test
-    - xcodebuild -scheme CCKeychainManagerTests -workspace .swiftpm/xcode/package.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6S,OS=11.1' build test
-    after_success:
-      - bash <(curl -s https://codecov.io/bash)
   - stage: Set tag
     script:
     - git tag $PACKAGE_VERSION
